@@ -5,14 +5,22 @@
 #include"Counfig.h"
 
 
+Slots R_struct_Slots[AvailableSlots]=
+{
+		{"2:30to3:00",Available,0},
+		{"3:00to3:30",Available,0},
+		{"3:30to4:00",Available,0},
+		{"4:00to4:30",Available,0},
+		{"4:30to5:00",Available,0}
 
+};
 
 
 
 int main(void)
 {
 	u8 L_u8_Choosen_option;
-	u8 L_u8_Entered_Password;
+	s32 L_s32_Entered_Password;
 	u8 L_u8_Password_Tracker=0;
 
 	printf("************welcome************\n\n\n");
@@ -27,14 +35,14 @@ int main(void)
 
 	if (First_Choice == L_u8_Choosen_option)
 	{
-		while(L_u8_Password_Tracker<3)
+		while(L_u8_Password_Tracker<NumberOfPasswordTries)
 		{
 		printf("Please Enter the password\n");
 
-		scanf("%d",&L_u8_Entered_Password);
+		scanf("%d",&L_s32_Entered_Password);
 		fflush(stdin);;
-
-		if(L_u8_Entered_Password == DefaultPassword )
+		printf("%d\n",L_s32_Entered_Password);
+		if(L_s32_Entered_Password == DefaultPassword )
 		{
 			void_Admin_Mode();
 			main();
@@ -49,7 +57,7 @@ int main(void)
 	}
 	else if (Second_Choice == L_u8_Choosen_option)
 	{
-		;
+		void_User_Mode();
 	}
 	else if (Third_Choice == L_u8_Choosen_option)
 	{

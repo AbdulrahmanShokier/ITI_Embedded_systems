@@ -13,7 +13,7 @@
 #include"Counfig.h"
 
 u8 u8_ArrayIndex = 0;
-u8 L_u8_Entered_ID;
+s32 L_u8_Entered_ID;
 u8 L_u8_Entered_Age;
 u8 L_u8_Entered_Gender;
 s8 R_s8_Entered_Name[MaxNameSize];
@@ -69,7 +69,7 @@ void AdmOpt1_void_Add_new_Patient(Patient* PointerToPatientsData)
 
 	if(u8_ArrayIndex>=NumberOfPatients)
 	{
-		printf("Sorry you can\'t enter a new patient");
+		printf("Sorry you can Snot enter a new patient");
 	}
 	else
 	{
@@ -94,13 +94,13 @@ void AdmOpt1_void_Add_new_Patient(Patient* PointerToPatientsData)
 
 		printf("This Id is available\n");
 		printf("Please continue\n");
-		printf("Enter the patient Name'\n");
+		printf("Enter the patient Name\n");
 		scanf("%19s",&R_s8_Entered_Name);
 		fflush(stdin);
-		printf("Enter the patient Age'\n");
+		printf("Enter the patient Age\n");
 		scanf("%d",&L_u8_Entered_Age);
 		fflush(stdin);
-		printf("Enter the patient Gender'\n");
+		printf("Enter the patient Gender\n");
 		scanf("%c",&L_u8_Entered_Gender);
 		fflush(stdin);
 		PointerToPatientsData[u8_ArrayIndex].L_u8_ID=L_u8_Entered_ID;
@@ -108,7 +108,8 @@ void AdmOpt1_void_Add_new_Patient(Patient* PointerToPatientsData)
 		PointerToPatientsData[u8_ArrayIndex].L_u8_Gender=L_u8_Entered_Gender;
 		strcpy(PointerToPatientsData[u8_ArrayIndex].R_s8_Name,R_s8_Entered_Name);
 		u8_ArrayIndex++ ;
-		printf("you successfully added a new patient!");
+		printf("you successfully added a new patient!\n\n");
+		printf("*******************************\n");
 		void_Admin_Mode();
 
 	}
@@ -120,6 +121,7 @@ void AdmOpt1_void_Add_new_Patient(Patient* PointerToPatientsData)
 
 void AdmOpt2_void_Edit_Existing_Patient(Patient *PointerToPatientsData)
 {
+	printf("*******************************\n");
 	printf("You chose to edit an existing patient data!\n\n");
 	printf("Enter the patient ID '\n");
 	scanf("%d",&L_u8_Entered_ID);
@@ -134,7 +136,7 @@ void AdmOpt2_void_Edit_Existing_Patient(Patient *PointerToPatientsData)
 		}
 		else
 		{
-			printf("This Id doesn\'t exist!\n");
+			printf("This Id does not exist!\n");
 			printf("Try adding it first\n");
 			void_Admin_Mode();
 		}
@@ -218,6 +220,7 @@ void AdmOpt2_void_Edit_Existing_Patient(Patient *PointerToPatientsData)
 
 void AdmOpt3_void_Reserve_A_Slot(Slots*PointerToSlots,Patient *PointerToPatientsData)
 {
+	printf("*******************************\n\n");
 	printf("You chose to Reserve a slot!\n\n");
 	printf("Enter the patient ID '\n");
 	scanf("%d",&L_u8_Entered_ID);
@@ -232,7 +235,7 @@ void AdmOpt3_void_Reserve_A_Slot(Slots*PointerToSlots,Patient *PointerToPatients
 		}
 		else
 		{
-			printf("This Id doesn\'t exist!\n");
+			printf("This Id does not exist!\n");
 			printf("Try adding it first\n");
 			void_Admin_Mode();
 		}
@@ -249,7 +252,7 @@ void AdmOpt3_void_Reserve_A_Slot(Slots*PointerToSlots,Patient *PointerToPatients
 		}
 
 	}
-	printf("Choose the time that suits yo\n");
+	printf("Choose the time that suits you\n");
 	scanf("%d",&L_u8_Choosen_option);
 	fflush(stdin);
 	if (First_Choice == L_u8_Choosen_option)
@@ -306,7 +309,7 @@ void AdmOpt4_void_Cancel_Reservation(Slots *PointerToSlots,Patient *PointerToPat
 		}
 		else
 		{
-			printf("This Id doesn\'t exist!\n");
+			printf("This Id does not exist!\n");
 			printf("Try adding it first\n");
 			void_Admin_Mode();
 		}
@@ -329,7 +332,7 @@ void AdmOpt4_void_Cancel_Reservation(Slots *PointerToSlots,Patient *PointerToPat
 	}
 	if(L_s32_iteration == AvailableSlots)
 	{
-		printf("This ID doesn\'t have a reservation\n");
+		printf("This ID does not have a reservation\n");
 	}
 	void_Admin_Mode();
 }
@@ -343,7 +346,7 @@ void void_User_Mode(void)
 	printf("Welcome to user Mode\n\n");
 	printf("Choose the option you want\n");
 	printf("1- View patient Record\n");
-	printf("2- View today’s reservations\n");
+	printf("2- View today reservations\n");
 	printf("3- Exit user mode\n");
 
 	scanf("%d",&L_u8_Choosen_option);

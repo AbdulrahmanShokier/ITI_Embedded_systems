@@ -57,15 +57,7 @@ typedef struct
 
 
 
-Slots R_struct_Slots[AvailableSlots]=
-{
-		{"2:30to3:00",Available,0},
-		{"3:00to3:30",Available,0},
-		{"3:30to4:00",Available,0},
-		{"4:00to4:30",Available,0},
-		{"4:30to5:00",Available,0}
-
-};
+extern Slots R_struct_Slots[AvailableSlots];
 
 
 /*****************Admin*******************/
